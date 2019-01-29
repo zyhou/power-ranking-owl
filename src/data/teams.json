@@ -1,12 +1,22 @@
 [
-  {
-    "id": 1,
-    "label": "Atlanta Reign",
-    "image": "https://liquipedia.net/commons/images/thumb/f/fd/Atlanta_Reign_logo.png/600px-Atlanta_Reign_logo.png"
-  },
-  {
-    "id": 2,
-    "label": "Boston Uprising",
-    "image": "https://liquipedia.net/commons/images/thumb/3/3d/Boston_Uprising_blue_logo.png/600px-Boston_Uprising_blue_logo.png"
-  }
+    {
+        "id": 1,
+        "label": "Atlanta Reign",
+        "image": "Atlanta-Reign.png"
+    },
+    {
+        "id": 2,
+        "label": "Boston Uprising",
+        "image": "Boston-Uprising.png"
+    },
+    {
+        "id": 3,
+        "label": "Florida Mayhem",
+        "image": "Florida-Mayhem.png"
+    },
+    {
+        "id": 4,
+        "label": "Houston Outlaws",
+        "image": "Houston-Outlaws.png"
+    }
 ]
