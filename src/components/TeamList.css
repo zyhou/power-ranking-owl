@@ -1,8 +1,9 @@
 .teamlist-content {
     display: flex;
     flex-direction: row;
-    background-color: #353839;
-    margin: 5px;
+    background-color: #1a1a1a;
+    margin: 10px;
+    min-height: 100px;
 }
 
 .teamlist-ranking {

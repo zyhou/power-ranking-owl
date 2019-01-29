@@ -2,21 +2,33 @@
     {
         "id": 1,
         "label": "Atlanta Reign",
-        "image": "Atlanta-Reign.png"
+        "image": {
+            "name": "Atlanta-Reign.svg",
+            "color": "#c4c4c4"
+        }
     },
     {
         "id": 2,
         "label": "Boston Uprising",
-        "image": "Boston-Uprising.png"
+        "image": {
+            "name": "Boston-Uprising.svg",
+            "color": "#174b97"
+        }
     },
     {
         "id": 3,
         "label": "Florida Mayhem",
-        "image": "Florida-Mayhem.png"
+        "image": {
+            "name": "Florida-Mayhem.svg",
+            "color": "#fedb00"
+        }
     },
     {
         "id": 4,
         "label": "Houston Outlaws",
-        "image": "Houston-Outlaws.png"
+        "image": {
+            "name": "Houston-Outlaws.svg",
+            "color": "#000000"
+        }
     }
 ]

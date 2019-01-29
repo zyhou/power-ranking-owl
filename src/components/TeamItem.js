@@ -4,16 +4,19 @@ import './TeamItem.css';
 
 const TeamItem = ({ team, isDragging, isGroupedOver, provided }) => (
     <a
-        href={`${process.env.PUBLIC_URL}/teams/${team.image}`}
+        href={`${process.env.PUBLIC_URL}/teams/${team.image.name}`}
         isdragging={isDragging.toString()}
         isgroupedover={isGroupedOver}
         ref={provided.innerRef}
         {...provided.draggableProps}
         {...provided.dragHandleProps}
     >
-        <div>
+        <div
+            className="teamitem-content"
+            style={{ backgroundColor: team.image.color }}
+        >
             <img
-                src={`${process.env.PUBLIC_URL}/teams/${team.image}`}
+                src={`${process.env.PUBLIC_URL}/teams/${team.image.name}`}
                 alt={team.label}
                 className="teamitem-image"
             />

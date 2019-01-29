@@ -15,27 +15,27 @@ class App extends Component {
         rankings: {
             tierS: {
                 teams: teamsS,
-                ranking: { label: 'Tier S', color: 'aqua' },
+                ranking: { label: 'Tier S', color: '#01b0f1' },
             },
             tierA: {
                 teams: teamsA,
-                ranking: { label: 'Tier A', color: 'green' },
+                ranking: { label: 'Tier A', color: '#00af50' },
             },
             tierB: {
                 teams: [],
-                ranking: { label: 'Tier B', color: 'lightgreen' },
+                ranking: { label: 'Tier B', color: '#92d14f' },
             },
             tierC: {
                 teams: [],
-                ranking: { label: 'Tier C', color: 'yellow' },
+                ranking: { label: 'Tier C', color: '#fed966' },
             },
             tierD: {
                 teams: [],
-                ranking: { label: 'Tier D', color: 'rosybrown' },
+                ranking: { label: 'Tier D', color: '#f88157' },
             },
             tierF: {
                 teams: [],
-                ranking: { label: 'Tier F', color: 'red' },
+                ranking: { label: 'Tier F', color: '#c00000' },
             },
         },
     };

@@ -1,3 +1,10 @@
+.teamitem-content {
+    margin-left: 10px;
+}
+
 .teamitem-image {
+    display: block;
     width: 100px;
+    height: 100px;
+    padding: 5px;
 }
