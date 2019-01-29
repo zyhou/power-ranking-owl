@@ -117,6 +117,7 @@ class App extends Component {
 
         return (
             <div className="app-body">
+                <h1>Power ranking Overwatch League</h1>
                 <div className="app-content">
                     <DragDropContext onDragEnd={this.onDragEnd}>
                         {Object.keys(rankings).map(key => (
