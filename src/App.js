@@ -7,8 +7,64 @@ import teams from './data/teams.json';
 
 import './App.css';
 
-const teamsS = teams.filter(t => t.id <= 3);
-const teamsA = teams.filter(t => t.id > 3);
+const teamsS = teams.filter(t => t.id <= 5);
+const teamsA = teams.filter(t => t.id > 5 && t.id <= 10);
+const teamsB = teams.filter(t => t.id > 10 && t.id <= 15);
+const teamsC = teams.filter(t => t.id > 15);
+
+const reorder = (list, startIndex, endIndex) => {
+    const result = Array.from(list);
+    const [removed] = result.splice(startIndex, 1);
+    result.splice(endIndex, 0, removed);
+
+    return result;
+};
+
+const reorderRankings = ({ rankings, source, destination }) => {
+    const current = [...rankings[source.droppableId].teams];
+    const next = [...rankings[destination.droppableId].teams];
+    const target = current[source.index];
+
+    // moving to same list
+    if (source.droppableId === destination.droppableId) {
+        const reordered = reorder(current, source.index, destination.index);
+
+        const result = {
+            ...rankings,
+            [source.droppableId]: {
+                ...rankings[source.droppableId],
+                teams: reordered,
+            },
+        };
+
+        return {
+            rankings: result,
+        };
+    }
+
+    // moving to different list
+
+    // remove from original
+    current.splice(source.index, 1);
+    // insert into next
+    next.splice(destination.index, 0, target);
+
+    const result = {
+        ...rankings,
+        [source.droppableId]: {
+            ...rankings[source.droppableId],
+            teams: current,
+        },
+        [destination.droppableId]: {
+            ...rankings[destination.droppableId],
+            teams: next,
+        },
+    };
+
+    return {
+        rankings: result,
+    };
+};
 
 class App extends Component {
     state = {
@@ -22,11 +78,11 @@ class App extends Component {
                 ranking: { label: 'Tier A', color: '#00af50' },
             },
             tierB: {
-                teams: [],
+                teams: teamsB,
                 ranking: { label: 'Tier B', color: '#92d14f' },
             },
             tierC: {
-                teams: [],
+                teams: teamsC,
                 ranking: { label: 'Tier C', color: '#fed966' },
             },
             tierD: {
@@ -45,7 +101,13 @@ class App extends Component {
             return;
         }
 
-        console.log('onDragEnd.result', result);
+        this.setState(
+            reorderRankings({
+                rankings: this.state.rankings,
+                source: result.source,
+                destination: result.destination,
+            }),
+        );
     };
 
     render() {

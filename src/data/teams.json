@@ -30,5 +30,133 @@
             "name": "Houston-Outlaws.svg",
             "color": "#000000"
         }
+    },
+    {
+        "id": 5,
+        "label": "London Spitfire",
+        "image": {
+            "name": "London-Spitfire.svg",
+            "color": "#59cbe8"
+        }
+    },
+    {
+        "id": 6,
+        "label": "New York Excelsior",
+        "image": {
+            "name": "New-York-Excelsior.svg",
+            "color": "#171c38"
+        }
+    },
+    {
+        "id": 7,
+        "label": "Paris Eternal",
+        "image": {
+            "name": "Paris-Eternal.svg",
+            "color": "#303d56"
+        }
+    },
+    {
+        "id": 8,
+        "label": "Philadelphia Fusion",
+        "image": {
+            "name": "Philadelphia-Fusion.svg",
+            "color": "#000000"
+        }
+    },
+    {
+        "id": 9,
+        "label": "Toronto Defiant",
+        "image": {
+            "name": "Toronto-Defiant.svg",
+            "color": "#000000"
+        }
+    },
+    {
+        "id": 10,
+        "label": "Washington Justice",
+        "image": {
+            "name": "Washington-Justice.svg",
+            "color": "#990034"
+        }
+    },
+    {
+        "id": 11,
+        "label": "Chengdu Hunters",
+        "image": {
+            "name": "Chengdu-Hunters.svg",
+            "color": "#ffa000"
+        }
+    },
+    {
+        "id": 12,
+        "label": "Dallas Fuel",
+        "image": {
+            "name": "Dallas-Fuel.svg",
+            "color": "#032340"
+        }
+    },
+    {
+        "id": 13,
+        "label": "Guangzhou Charge",
+        "image": {
+            "name": "Guangzhou-Charge.svg",
+            "color": "#122c42"
+        }
+    },
+    {
+        "id": 14,
+        "label": "Hangzhou Spark",
+        "image": {
+            "name": "Hangzhou-Spark.svg",
+            "color": "#fb7299"
+        }
+    },
+    {
+        "id": 15,
+        "label": "Los Angeles Gladiators",
+        "image": {
+            "name": "Los-Angeles-Gladiators.svg",
+            "color": "#3c1053"
+        }
+    },
+    {
+        "id": 16,
+        "label": "Los Angeles Valiant",
+        "image": {
+            "name": "Los-Angeles-Valiant.svg",
+            "color": "#004438"
+        }
+    },
+    {
+        "id": 17,
+        "label": "San Francisco Shock",
+        "image": {
+            "name": "San-Francisco-Shock.svg",
+            "color": "#75787b"
+        }
+    },
+    {
+        "id": 18,
+        "label": "Seoul Dynasty",
+        "image": {
+            "name": "Seoul-Dynasty.svg",
+            "color": "#000000"
+        }
+    },
+    {
+        "id": 19,
+        "label": "Shanghai Dragons",
+        "image": {
+            "name": "Shanghai-Dragons.svg",
+            "color": "#d22630"
+        }
+    },
+    {
+        "id": 20,
+        "label": "Vancouver Titans",
+        "image": {
+            "name": "Vancouver-Titans.svg",
+            "color": "#09226b"
+        }
     }
 ]
