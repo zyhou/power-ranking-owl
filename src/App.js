@@ -7,10 +7,12 @@ import teams from './data/teams.json';
 
 import './App.css';
 
-const teamsS = teams.filter(t => t.id <= 5);
-const teamsA = teams.filter(t => t.id > 5 && t.id <= 10);
-const teamsB = teams.filter(t => t.id > 10 && t.id <= 15);
-const teamsC = teams.filter(t => t.id > 15);
+const teamsS = teams.filter(t => t.id <= 4);
+const teamsA = teams.filter(t => t.id > 4 && t.id <= 7);
+const teamsB = teams.filter(t => t.id > 7 && t.id <= 10);
+const teamsC = teams.filter(t => t.id > 10 && t.id <= 13);
+const teamsD = teams.filter(t => t.id > 13 && t.id <= 16);
+const teamsF = teams.filter(t => t.id > 16);
 
 const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
@@ -86,11 +88,11 @@ class App extends Component {
                 ranking: { label: 'Tier C', color: '#fed966' },
             },
             tierD: {
-                teams: [],
+                teams: teamsD,
                 ranking: { label: 'Tier D', color: '#f88157' },
             },
             tierF: {
-                teams: [],
+                teams: teamsF,
                 ranking: { label: 'Tier F', color: '#c00000' },
             },
         },
