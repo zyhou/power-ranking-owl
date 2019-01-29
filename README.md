@@ -1,6 +1,6 @@
  # Power ranking Overwatch League
 
-Build your own ranking
+Build your own ranking on [https://zyhou.github.io/power-ranking-owl/](https://zyhou.github.io/power-ranking-owl/)
 
 ## Installation
 
