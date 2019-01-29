@@ -4,7 +4,6 @@ import './TeamItem.css';
 
 const TeamItem = ({ team, isDragging, isGroupedOver, provided }) => (
     <a
-        href={`${process.env.PUBLIC_URL}/teams/${team.image.name}`}
         isdragging={isDragging.toString()}
         isgroupedover={isGroupedOver}
         ref={provided.innerRef}
