@@ -1,12 +1,35 @@
-.app-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
 .app-content {
   width: 100%;
+}
+
+.app-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.app-title {
+  font-size: 35px;
+}
+
+.app-export {
+  background-color: #0e0e0e;
+  cursor: pointer;
+  user-select: none;
+  font-size: 15px;
+  border-style: none;
+  padding: 16px;
+  margin: 10px;
+  height: 50px;
+}
+
+.app-export.twitter {
+  color: #38a1f3;
+  box-shadow: #38a1f3 0px 0px 0px 1px inset;
+}
+
+.app-export.export {
+  color: #c198fb;
+  box-shadow: #c198fb 0px 0px 0px 1px inset;
 }
