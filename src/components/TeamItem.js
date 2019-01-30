@@ -2,10 +2,9 @@ import React from 'react';
 
 import './TeamItem.css';
 
-const TeamItem = ({ team, isDragging, isGroupedOver, provided }) => (
+const TeamItem = ({ team, isDragging, provided }) => (
     <a
         isdragging={isDragging.toString()}
-        isgroupedover={isGroupedOver}
         ref={provided.innerRef}
         {...provided.draggableProps}
         {...provided.dragHandleProps}

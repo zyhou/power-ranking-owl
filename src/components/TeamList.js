@@ -18,7 +18,6 @@ class InnerTeamList extends Component {
                         key={team.id}
                         team={team}
                         isDragging={dragSnapshot.isDragging}
-                        isGroupedOver={dragSnapshot.combineTargetFor}
                         provided={dragProvided}
                     />
                 )}
@@ -26,6 +25,12 @@ class InnerTeamList extends Component {
         ));
     }
 }
+
+const getWrapperDroppableStyles = () => ({
+    display: 'flex',
+    width: '100%',
+    paddingBottom: 0,
+});
 
 const TeamList = ({ listId, ranking, teams }) => (
     <div className="teamlist-content">
@@ -35,11 +40,17 @@ const TeamList = ({ listId, ranking, teams }) => (
         >
             {ranking.label}
         </div>
-        <Droppable droppableId={listId} type="CARD">
-            {dropProvided => (
-                <div ref={dropProvided.innerRef} className="teamlist-team">
-                    <InnerTeamList teams={teams} />
-                    {dropProvided.placeholder}
+        <Droppable droppableId={listId} type="CARD" direction="horizontal">
+            {(dropProvided, dropSnapshot) => (
+                <div
+                    style={getWrapperDroppableStyles()}
+                    isdraggingover={dropSnapshot.isDraggingOver.toString()}
+                    {...dropProvided.droppableProps}
+                >
+                    <div ref={dropProvided.innerRef} className="teamlist-team">
+                        <InnerTeamList teams={teams} />
+                        {dropProvided.placeholder}
+                    </div>
                 </div>
             )}
         </Droppable>
