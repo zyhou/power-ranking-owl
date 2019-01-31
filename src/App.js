@@ -69,6 +69,14 @@ const reorderRankings = ({ rankings, source, destination }) => {
   };
 };
 
+const configExportImage = ({ offsetWidth, offsetHeight }) => ({
+  style: {
+    background: "#0e0e0e"
+  },
+  width: offsetWidth,
+  height: offsetHeight
+});
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -119,7 +127,10 @@ class App extends Component {
   };
 
   handleSaveImage = async () => {
-    const blob = await domtoimage.toBlob(this.rankingsContainer.current);
+    const blob = await domtoimage.toBlob(
+      this.rankingsContainer.current,
+      configExportImage(this.rankingsContainer)
+    );
     const link = document.createElement("a");
     link.download = `power-ranking-owl.png`;
     link.href = window.URL.createObjectURL(blob);
@@ -136,12 +147,12 @@ class App extends Component {
         <nav className="app-nav">
           <h1 className="app-title">Power ranking Overwatch League</h1>
           <div>
-            <button
+            {/* <button
               className="app-export twitter"
               onClick={this.handleSaveImage}
             >
               Twitter
-            </button>
+            </button> */}
             <button
               className="app-export export"
               onClick={this.handleSaveImage}
@@ -152,7 +163,7 @@ class App extends Component {
         </nav>
         <div className="app-content">
           <DragDropContext onDragEnd={this.onDragEnd}>
-            <div ref={this.rankingsContainer}>
+            <div ref={this.rankingsContainer} style={{ padding: "10px" }}>
               {Object.keys(rankings).map(key => (
                 <TeamList
                   key={key}

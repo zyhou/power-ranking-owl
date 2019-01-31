@@ -17,6 +17,7 @@
   background-color: #0e0e0e;
   cursor: pointer;
   user-select: none;
+  outline: 0;
   font-size: 15px;
   border-style: none;
   padding: 16px;
