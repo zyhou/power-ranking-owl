@@ -69,11 +69,16 @@ const reorderRankings = ({ rankings, source, destination }) => {
   };
 };
 
-const configExportImage = ({ offsetWidth, offsetHeight }) => ({
+const countMaxTeamsInRows = ({ rankings }) => {
+  const teams = Object.keys(rankings).map(e => rankings[e].teams.length);
+  return Math.max(...teams);
+};
+
+const configExportImage = ({ offsetWidth, offsetHeight }, maxTeams) => ({
   style: {
     background: "#0e0e0e"
   },
-  width: offsetWidth,
+  width: maxTeams * 110 + 200 + 200,
   height: offsetHeight
 });
 
@@ -129,7 +134,10 @@ class App extends Component {
   handleSaveImage = async () => {
     const blob = await domtoimage.toBlob(
       this.rankingsContainer.current,
-      configExportImage(this.rankingsContainer)
+      configExportImage(
+        this.rankingsContainer.current,
+        countMaxTeamsInRows(this.state)
+      )
     );
     const link = document.createElement("a");
     link.download = `power-ranking-owl.png`;
