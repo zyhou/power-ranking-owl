@@ -1,25 +1,26 @@
- # Power ranking Overwatch League
+# Power ranking Overwatch League
 
-Build your own ranking on [https://zyhou.github.io/power-ranking-owl/](https://zyhou.github.io/power-ranking-owl/)
+<p align="center"><img width=100% src="https://zyhou.github.io/power-ranking-owl/card.png"></p>
 
-## Installation
+## Introduction
 
-```bash
-# yarn
-yarn
+Build you own power ranking. Visit [zyhou.github.io/power-ranking-owl/](https://zyhou.github.io/power-ranking-owl/)
 
-# npm
-npm install
-```
+## Features
+
+-   **Order teams**. Simply drag and drop your OWL teams
+-   **Share quickly**. Save your power ranking with one click
 
 ---
 
-## Start
+## Contribute
+
+PRs welcome!
 
 ```bash
-# yarn
-yarn start
+# Installation
+yarn
 
-# npm
-npm run start
+# Launch
+yarn start
 ```
