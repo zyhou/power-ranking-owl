@@ -50,8 +50,8 @@
             "dest": "/teams/$1"
         },
         {
-            "src": "/api/(.*)",
-            "dest": "/api/$1"
+            "src": "^/api/index.js",
+            "dest": "/api"
         },
         {
             "src": "^/(.*)",
