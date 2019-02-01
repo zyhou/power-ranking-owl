@@ -40,14 +40,6 @@
         {
             "src": "^/(.*)",
             "dest": "/index.html"
-        },
-        {
-            "src": "^/card.png",
-            "dest": "/card.png"
-        },
-        {
-            "src": "^/teams/(.*)",
-            "dest": "/teams/$1"
         }
     ],
     "github": {

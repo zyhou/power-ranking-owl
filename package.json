@@ -4,6 +4,7 @@
     "private": true,
     "license": "MIT",
     "repository": "zyhou/power-ranking-owl",
+    "homepage": "https://power-ranking-owl.now.sh/",
     "description": "Power ranking Overwatch League",
     "author": "Maxime Richard <@choukmax>",
     "dependencies": {
