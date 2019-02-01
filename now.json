@@ -7,6 +7,10 @@
         {
             "src": "package.json",
             "use": "@now/static-build"
+        },
+        {
+            "src": "api/*.js",
+            "use": "@now/node"
         }
     ],
     "routes": [
