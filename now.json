@@ -1,6 +1,6 @@
 {
     "name": "power-ranking-owl",
-    "alias": ["power-ranking-owl", "www.power-ranking-owl"],
+    "alias": ["power-ranking-owl"],
     "version": 2,
     "public": true,
     "builds": [

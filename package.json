@@ -3,7 +3,6 @@
     "version": "0.1.0",
     "private": true,
     "license": "MIT",
-    "homepage": "http://zyhou.github.io/power-ranking-owl#readme",
     "repository": "zyhou/power-ranking-owl",
     "description": "Power ranking Overwatch League",
     "author": "Maxime Richard <@choukmax>",
