@@ -25,6 +25,10 @@
   height: 50px;
 }
 
+.app-export:hover {
+  background-color: #1a1a1a;
+}
+
 .app-export.twitter {
   color: #38a1f3;
   box-shadow: #38a1f3 0px 0px 0px 1px inset;
@@ -33,4 +37,25 @@
 .app-export.export {
   color: #c198fb;
   box-shadow: #c198fb 0px 0px 0px 1px inset;
+}
+
+.app-footer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.app-link {
+    margin-right: 20px;
+    color: #fff;
+    text-decoration: none;
+    padding-bottom: 3px;
+    background: linear-gradient( to right, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 100% );
+    background-size: 1px 1px;
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+}
+
+.app-link:hover {
+    color: #c198fb;
 }
