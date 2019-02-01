@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Build you own power ranking. Visit [zyhou.github.io/power-ranking-owl/](https://power-ranking-owl.now.sh/)
+Build you own power ranking. Visit [power-ranking-owl.now.sh](https://power-ranking-owl.now.sh/)
 
 ## Features
 
