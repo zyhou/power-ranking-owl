@@ -5,6 +5,7 @@
     "license": "MIT",
     "repository": "zyhou/power-ranking-owl",
     "homepage": "https://power-ranking-owl.now.sh/",
+    "bugs": "https://github.com/zyhou/power-ranking-owl/issues",
     "description": "Power ranking Overwatch League",
     "author": "Maxime Richard <@choukmax>",
     "dependencies": {

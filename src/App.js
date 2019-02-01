@@ -177,6 +177,14 @@ class App extends Component {
                         </div>
                     </DragDropContext>
                 </div>
+                <footer className="app-footer">
+                    <a className="app-link" href="https://github.com/zyhou/power-ranking-owl/issues/new">
+                        send feedback
+                    </a>
+                    <a className="app-link" href="https://github.com/zyhou/power-ranking-owl">
+                        source
+                    </a>
+                </footer>
             </div>
         );
     }
