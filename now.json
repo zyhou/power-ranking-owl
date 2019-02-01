@@ -50,8 +50,12 @@
             "dest": "/teams/$1"
         },
         {
-            "src": "^/(.*)",
+            "src": "^/$",
             "dest": "/index.html"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.js"
         }
     ],
     "github": {
