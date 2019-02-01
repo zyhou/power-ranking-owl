@@ -38,6 +38,14 @@
             "dest": "/precache-manifest.$1"
         },
         {
+            "src": "^/card.png",
+            "dest": "/card.png"
+        },
+        {
+            "src": "^/teams/(.*)",
+            "dest": "/teams/$1"
+        },
+        {
             "src": "^/(.*)",
             "dest": "/index.html"
         }
