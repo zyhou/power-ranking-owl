@@ -21,6 +21,9 @@ PRs welcome!
 # Installation
 yarn
 
-# Launch
+# Launch client on 3000 port
 yarn start
+
+# Launch server on 3001 port
+yarn server
 ```
