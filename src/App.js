@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import TeamList from './components/TeamList';
 
-import { getImageByNode, reorderRankings } from './util';
+import { getImageByNode, reorderRankings, openTwitterUrl } from './util';
 import teams from './data/teams.json';
 import config from './config';
 
@@ -102,7 +102,7 @@ class App extends Component {
 
         const text = `Power ranking Overwatch league ${encodeURIComponent(response.result.url)}`;
         const tweetUrl = `https://twitter.com/intent/tweet?text=${text}`;
-        console.log({ tweetUrl });
+        openTwitterUrl(tweetUrl);
         this.setState({ buttonTweet: 'Twitter' });
     };
 

@@ -74,3 +74,12 @@ export const getImageByNode = async (node, { rankings }, type) => {
     }
     return await domtoimage.toPng(node, config);
 };
+
+export const openTwitterUrl = twitterUrl => {
+    const width = 575;
+    const height = 400;
+    const left = (window.outerWidth - width) / 2;
+    const top = (window.outerHeight - height) / 2;
+    const opts = `status=1,width=${width},height=${height},top=${top},left=${left}`;
+    window.open(twitterUrl, 'twitter', opts);
+};
