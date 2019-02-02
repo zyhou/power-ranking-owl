@@ -3,6 +3,22 @@
     "alias": ["power-ranking-owl"],
     "version": 2,
     "public": true,
+    "env": {
+        "NODE_ENV": "production",
+        "API_URL": "@api_url",
+        "ROUTE_URL": "@route_url",
+        "CONSUMER_KEY": "@consumer_key",
+        "CONSUMER_SECRET": "@consumer_secret",
+        "ACCESS_TOKEN": "@access_token",
+        "ACCESS_TOKEN_SECRET": "@access_token_secret"
+    },
+    "build": {
+        "env": {
+            "NODE_ENV": "production",
+            "REACT_APP_API_URL": "@api_url",
+            "REACT_APP_ROUTE_URL": "@route_url"
+        }
+    },
     "builds": [
         {
             "src": "package.json",

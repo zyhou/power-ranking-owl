@@ -18,6 +18,12 @@ Build you own power ranking. Visit [power-ranking-owl.now.sh](https://power-rank
 PRs welcome!
 
 ```bash
+# Create file .env.development.local
+CONSUMER_KEY=
+CONSUMER_SECRET=
+ACCESS_TOKEN=
+ACCESS_TOKEN_SECRET=
+
 # Installation
 yarn
 

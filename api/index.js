@@ -1,18 +1,25 @@
 const express = require('express');
-const twit = require('twit');
+const config = require('../src/config');
+const twitter = require('./twitter');
 
 const app = express();
 
-const twitter = new twit({
-    consumer_key: '...',
-    consumer_secret: '...',
-    access_token: '...',
-    access_token_secret: '...',
-    timeout_ms: 60 * 1000,
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
 });
 
-app.get('/api/tweet', (req, res) => {
-    return res.send('/api/tweet');
+app.use(express.json({ limit: '500kb' }));
+
+app.post(config.ROUTE_URL, (req, res) => {
+    if (!req.body.image) {
+        return res.send({ error: 'wrong param' });
+    }
+
+    twitter.uploadImage(req.body.image, result => {
+        return res.send({ result });
+    });
 });
 
 module.exports = app;
