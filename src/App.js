@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
-import domtoimage from 'dom-to-image';
+import axios from 'axios';
 
 import TeamList from './components/TeamList';
 
+import { getImageByNode, reorderRankings } from './util';
 import teams from './data/teams.json';
+import config from './config';
 
 import './App.css';
+
+const client = axios.create({ baseURL: config.API_URL });
 
 const teamsS = teams.filter(t => t.id <= 4);
 const teamsA = teams.filter(t => t.id > 4 && t.id <= 7);
@@ -14,73 +18,6 @@ const teamsB = teams.filter(t => t.id > 7 && t.id <= 10);
 const teamsC = teams.filter(t => t.id > 10 && t.id <= 13);
 const teamsD = teams.filter(t => t.id > 13 && t.id <= 16);
 const teamsF = teams.filter(t => t.id > 16);
-
-const reorder = (list, startIndex, endIndex) => {
-    const result = Array.from(list);
-    const [removed] = result.splice(startIndex, 1);
-    result.splice(endIndex, 0, removed);
-
-    return result;
-};
-
-const reorderRankings = ({ rankings, source, destination }) => {
-    const current = [...rankings[source.droppableId].teams];
-    const next = [...rankings[destination.droppableId].teams];
-    const target = current[source.index];
-
-    // moving to same list
-    if (source.droppableId === destination.droppableId) {
-        const reordered = reorder(current, source.index, destination.index);
-
-        const result = {
-            ...rankings,
-            [source.droppableId]: {
-                ...rankings[source.droppableId],
-                teams: reordered,
-            },
-        };
-
-        return {
-            rankings: result,
-        };
-    }
-
-    // moving to different list
-
-    // remove from original
-    current.splice(source.index, 1);
-    // insert into next
-    next.splice(destination.index, 0, target);
-
-    const result = {
-        ...rankings,
-        [source.droppableId]: {
-            ...rankings[source.droppableId],
-            teams: current,
-        },
-        [destination.droppableId]: {
-            ...rankings[destination.droppableId],
-            teams: next,
-        },
-    };
-
-    return {
-        rankings: result,
-    };
-};
-
-const countMaxTeamsInRows = ({ rankings }) => {
-    const teams = Object.keys(rankings).map(e => rankings[e].teams.length);
-    return Math.max(...teams);
-};
-
-const configExportImage = ({ offsetWidth, offsetHeight }, maxTeams) => ({
-    style: {
-        background: '#0e0e0e',
-    },
-    width: maxTeams * 110 + 200 + 200,
-    height: offsetHeight,
-});
 
 class App extends Component {
     constructor(props) {
@@ -115,6 +52,7 @@ class App extends Component {
                 ranking: { label: 'Tier F', color: '#c00000' },
             },
         },
+        buttonTweet: 'Twitter',
     };
 
     onDragEnd = result => {
@@ -132,10 +70,7 @@ class App extends Component {
     };
 
     handleSaveImage = async () => {
-        const blob = await domtoimage.toBlob(
-            this.rankingsContainer.current,
-            configExportImage(this.rankingsContainer.current, countMaxTeamsInRows(this.state)),
-        );
+        const blob = await getImageByNode(this.rankingsContainer.current, this.state, 'blob');
         const link = document.createElement('a');
         link.download = `power-ranking-owl.png`;
         link.href = window.URL.createObjectURL(blob);
@@ -144,20 +79,44 @@ class App extends Component {
         link.remove();
     };
 
+    handleTweet = async () => {
+        this.setState({ buttonTweet: 'Loading...' });
+        const encodedImage = await getImageByNode(this.rankingsContainer.current, this.state, 'png');
+
+        let response = null;
+        try {
+            const { data } = await client.post(config.ROUTE_URL, {
+                image: encodedImage.split(',')[1],
+            });
+            response = data;
+        } catch {
+            this.setState({ buttonTweet: 'Error' });
+            return;
+        }
+
+        if (!response || response.error) {
+            console.log({ error: response.error });
+            this.setState({ buttonTweet: 'Error' });
+            return;
+        }
+
+        const text = `Power ranking Overwatch league ${encodeURIComponent(response.result.url)}`;
+        const tweetUrl = `https://twitter.com/intent/tweet?text=${text}`;
+        console.log({ tweetUrl });
+        this.setState({ buttonTweet: 'Twitter' });
+    };
+
     render() {
-        const { rankings } = this.state;
+        const { rankings, buttonTweet } = this.state;
 
         return (
             <div className="app-body">
                 <nav className="app-nav">
                     <h1 className="app-title">Power ranking Overwatch League</h1>
                     <div>
-                        {/* <button
-                            className="app-export twitter"
-                            onClick={this.handleSaveImage}
-                            >
-                            Twitter
-                            </button> */}
+                        <button className="app-export twitter" onClick={this.handleTweet}>
+                            {buttonTweet}
+                        </button>
                         <button className="app-export export" onClick={this.handleSaveImage}>
                             Export
                         </button>
