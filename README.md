@@ -1,6 +1,6 @@
 # Power ranking Overwatch League
 
-<p align="center"><img width=100% src="https://power-ranking-owl.now.sh/card.png"></p>
+<p align="center"><img width=100% src="https://raw.githubusercontent.com/zyhou/power-ranking-owl/master/doc/website.gif"></p>
 
 ## Introduction
 
