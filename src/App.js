@@ -10,8 +10,6 @@ import config from './config';
 
 import './App.css';
 
-console.log({ env: process.env, config });
-
 const client = axios.create({ baseURL: config.API_URL });
 
 const teamsS = teams.filter(t => t.id <= 4);
